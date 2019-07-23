@@ -3,6 +3,18 @@
 # go-web应用脚手架
 
 
+## 0 quick start
+
+```
+- step1: 拉代码 需要在 $GOPATH/src 目录下
+git clone https://github.com/spiolynn/go-web-scaffold.git
+
+- step2: 下载依赖
+govendor sync
+(如无govendor命令,执行: go get -u github.com/kardianos/govendor)
+
+```
+
 
 ## 1 Features
 

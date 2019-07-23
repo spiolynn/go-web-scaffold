@@ -2,23 +2,24 @@ package main
 
 import (
 	"fmt"
+	"go-web-scaffold/models"
 	"go-web-scaffold/pkgs/logging"
 	"go-web-scaffold/pkgs/setting"
+	"go-web-scaffold/routers"
 	"net/http"
 	"time"
-	"go-web-scaffold/routers"
 )
 
 /*
 主程序
- */
-
+*/
 
 // 初始化
-func _init(){
+func _init() {
 	logging.Info(" server init start ")
 
 	logging.Info(" db init start ")
+	models.OpenDB()
 
 	logging.Info(" redis init start ")
 
@@ -26,8 +27,7 @@ func _init(){
 
 }
 
-
-func _start_server(){
+func _start_server() {
 
 	// 路由初始
 	router := routers.InitRouter()
@@ -45,8 +45,7 @@ func _start_server(){
 
 }
 
-
-func main(){
+func main() {
 	_init()
 	_start_server()
 }

@@ -19,7 +19,8 @@
 - [x] yaml配置文件
 - [x] 日志模块
 - [x] 日志日期分割、日志级别分割
-- [x] 
+- [x] 数据库CRUD (mysql)
+- [X] TDD: 单元测试
 
 
 ## 5 Stargazers

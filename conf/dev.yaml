@@ -2,13 +2,14 @@
 # dev environment config
 db:
   type: mysql
-  user: wams
-  password: wams
-  host: 120.27.1.111:3306
-  sid: wams
+  user: go
+  password: go
+  host: 1.1.1.1:3306
+  sid: goDB
   tableprefix: blog_
-#  maxidleconn: 10
-#  maxopenconn: 100
+  maxidleconn: 10
+  maxopenconn: 100
+  dbdebug: true
 
 server:
   runmode: debug

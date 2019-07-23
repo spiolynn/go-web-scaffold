@@ -95,4 +95,17 @@ CREATE TABLE `users_accounts` (
 ## 3 数据初始化
 
 
+```$xslt
+drop table blog_admin;
+create table blog_admin(
+	`ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+	`Username` varchar(50)  NOT NULL ,
+	`Password` varchar(50)  NOT NULL ,
+	PRIMARY KEY (`ID`)
+);
+
+INSERT into blog_admin VALUES(1,'tony','stark');
+commit;
+```
+
 

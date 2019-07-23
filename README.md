@@ -71,6 +71,16 @@ go build main.go
 - [x] 数据库CRUD (mysql)
 - [X] TDD: 单元测试
 - [X] 性能测试
+- [ ] GET POST PUT DELETE 请求
+- [ ] JSON FORM PARAM 三种请求方式
+- [ ] POSTMAN 接口测试
+- [ ] 中间件[交易时间统计]
+- [ ] Redis 数据
+- [ ] 容器化部署
+- [ ] 日志集中收集 ELK
+- [ ] 安全机制 文件上传、下载安全限制
+- [ ] AUTH2
+- [ ] 服务注册 
 
 ## 5 Stargazers
 

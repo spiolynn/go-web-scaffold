@@ -16,14 +16,14 @@ import (
 
 // 初始化
 func _init() {
-	logging.Info(" server init start ")
+	logging.Logs.Info(" server init start ")
 
-	logging.Info(" db init start ")
+	logging.Logs.Info(" db init start ")
 	models.OpenDB()
 
-	logging.Info(" redis init start ")
+	logging.Logs.Info(" redis init start ")
 
-	logging.Info(" server init end ")
+	logging.Logs.Info(" server init end ")
 
 }
 

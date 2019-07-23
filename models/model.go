@@ -23,7 +23,7 @@ type Model struct {
 // 初始化
 func _init() {
 
-	logging.Info(" model init start ... ")
+	logging.Logs.Info(" model init start ... ")
 
 	var err error
 	db, err = gorm.Open(setting.G_cfg_yaml.DB.Type, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
@@ -35,7 +35,7 @@ func _init() {
 	if err != nil {
 		logging.Fatal(fmt.Sprintf("Fail to open the DB: %v, with errors: %v", setting.G_cfg_yaml.DB.Host, err))
 	} else {
-		logging.Info("Connect to DB successful.")
+		logging.Logs.Info("Connect to DB successful.")
 	}
 
 	// 数据库表头
@@ -56,7 +56,7 @@ func _init() {
 		db.LogMode(true)
 	}
 
-	logging.Info(" model init end ... ")
+	logging.Logs.Info(" model init end ... ")
 }
 
 func OpenDB() {

@@ -10,6 +10,7 @@ import (
 	"github.com/lestrrat-go/file-rotatelogs"
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"
+	"github.com/t-tomalak/logrus-easy-formatter"
 	"go-web-scaffold/pkgs/setting"
 	"os"
 	"path/filepath"
@@ -19,6 +20,7 @@ import (
 var (
 	hostname string
 	Log      *logrus.Logger
+	Logs     *logrus.Entry
 )
 
 func init() {
@@ -38,7 +40,8 @@ func Setting() {
 	// init logpath
 	logpath := filepath.Join(setting.G_cfg_yaml.Logs.Logsrootpath,
 		setting.G_cfg_yaml.Logs.Logsfilename)
-	Log = newLogger(logpath)
+
+	Logs = newLogger(logpath)
 
 	// 设置日志格式
 	//Log.Formatter = &logrus.JSONFormatter{}
@@ -65,11 +68,12 @@ func Setting() {
 }
 
 // 定义日志
-func newLogger(v_path string) *logrus.Logger {
+func newLogger(v_path string) *logrus.Entry {
 	if Log != nil {
-		return Log
+		return nil
 	}
 
+	// 日志日期分割
 	path := v_path
 	writer, err := rotatelogs.New(
 		path+".%Y%m%d%H%M",
@@ -77,7 +81,6 @@ func newLogger(v_path string) *logrus.Logger {
 		rotatelogs.WithMaxAge(time.Duration(86400)*time.Second),
 		rotatelogs.WithRotationTime(time.Duration(86400)*time.Second),
 	)
-
 	if err != nil {
 		fmt.Println("error")
 	}
@@ -93,17 +96,19 @@ func newLogger(v_path string) *logrus.Logger {
 	}
 
 	Log = logrus.New()
-	Log.SetOutput(os.Stdout)
+	Log.SetOutput(os.Stderr)
 
 	// 加行号hook
 	filenameHook := filename.NewHook()
-	filenameHook.Field = "line"
+	filenameHook.Field = "lineno"
 	Log.AddHook(filenameHook)
 
 	// 文件hook
 	Log.Hooks.Add(lfshook.NewHook(pathMap, &logrus.TextFormatter{}))
 
-	return Log
+	Logs := Log.WithFields(logrus.Fields{"host": hostname})
+
+	return Logs
 }
 
 // 封装 info
@@ -137,19 +142,19 @@ func Panic(args ...interface{}) {
 	}).Panic(args)
 }
 
-
 // 定义日志输出格式
-//func logfomat(){
-//
-//	Log = &logrus.Logger{
-//		Out:   os.Stderr,
-//		Level: logrus.DebugLevel,
-//		Formatter: &easy.Formatter{
-//			TimestampFormat: "2006-01-02 15:04:05",
-//			LogFormat:       "[%lvl%]: %time% - %msg% \n",
-//		},
-//	}
-//}
+
+func logfomat() {
+
+	Log = &logrus.Logger{
+		Out:   os.Stderr,
+		Level: logrus.DebugLevel,
+		Formatter: &easy.Formatter{
+			TimestampFormat: "2006-01-02 15:04:05",
+			LogFormat:       "[%lvl%]: %time% - %msg% \n",
+		},
+	}
+}
 
 //func main() {
 //

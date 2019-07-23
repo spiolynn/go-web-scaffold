@@ -13,6 +13,12 @@ git clone https://github.com/spiolynn/go-web-scaffold.git
 govendor sync
 (如无govendor命令,执行: go get -u github.com/kardianos/govendor)
 
+- step3: build
+go build main.go
+
+- step4: run
+./main
+
 ```
 
 

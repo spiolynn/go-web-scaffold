@@ -103,10 +103,11 @@ func newLogger(v_path string) *logrus.Entry {
 	Log.AddHook(filenameHook)
 
 	// 文件hook
-	Log.Hooks.Add(lfshook.NewHook(pathMap, &logrus.TextFormatter{}))
+	customFormatter := new(logrus.TextFormatter)
+	customFormatter.TimestampFormat = "2006-01-02 15:04:05"
+	Log.Hooks.Add(lfshook.NewHook(pathMap, customFormatter))
 
 	Logs := Log.WithFields(logrus.Fields{"host": hostname})
-	Logs.Time = time.Now()
 
 	return Logs
 }
@@ -154,6 +155,10 @@ func Panic(args ...interface{}) {
 //			LogFormat:       "[%lvl%]: %time% - %msg% \n",
 //		},
 //	}
+//
+//	customFormatter := new(logrus.TextFormatter)
+//	customFormatter.TimestampFormat = "2006-01-02 15:04:05"
+//
 //}
 
 //func main() {

@@ -44,3 +44,23 @@ func CheckAdmin(nm, pwd string) (bool, error) {
 	}
 	return false, nil
 }
+
+// 新增数据
+func AddAdmin(data map[string]interface{}) error {
+	err := db.Create(&Admin{
+		Username: data["username"].(string),
+		Password: data["password"].(string),
+	}).Error
+	return err
+}
+
+// 删除数据
+func DeleteAdmin(nm string) error {
+	return db.Where("username = ?", nm).Delete(Admin{}).Error
+}
+
+// 修改数据
+func EditAdmin(data map[string]interface{}) error {
+	err := db.Table("blog_admin").Where("username = ?", data["username"]).UpdateColumn("password", data["password"]).Error
+	return err
+}

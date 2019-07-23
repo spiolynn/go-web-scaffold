@@ -2,7 +2,7 @@ package setting
 
 /*
 配置文件读取
- */
+*/
 
 import (
 	"fmt"
@@ -13,43 +13,45 @@ import (
 )
 
 type Config struct {
-	DB struct{
-		Type string `yaml: "type"`
-		User string `yaml: "user"`
-		Password string  `yaml: "password"`
-		Host string  `yaml: "host"`
-		Sid string  `yaml: "sid"`
-		Tableprefix string  `yaml: "tableprefix"`
+	DB struct {
+		Type        string `yaml: "type"`
+		User        string `yaml: "user"`
+		Password    string `yaml: "password"`
+		Host        string `yaml: "host"`
+		Sid         string `yaml: "sid"`
+		Tableprefix string `yaml: "tableprefix"`
+
+		Maxidleconn int    `yaml: "maxidleconn"`
+		Maxopenconn int    `yaml: "maxopenconn"`
+		DBdebug     string `yaml: "dbdebug"`
 	}
-	App struct{
+	App struct {
 		Temp string `yaml: "temp"`
 	}
-	Logs struct{
+	Logs struct {
 		Logsrootpath string `yaml: "logsrootpath"`
-		Logslevel string `yaml: "logslevel"`
+		Logslevel    string `yaml: "logslevel"`
 		Logsfilename string `yaml: "logsfilename"`
 	}
-	Server struct{
-		Runmode string `yaml: "runmode"`
-		Httpprot int `yaml: "httpprot"`
-		Readtimeout int `yaml: "readtimeout"`
-		Wirtetimeout int `yaml: "wirtetimeout"`
+	Server struct {
+		Runmode      string `yaml: "runmode"`
+		Httpprot     int    `yaml: "httpprot"`
+		Readtimeout  int    `yaml: "readtimeout"`
+		Wirtetimeout int    `yaml: "wirtetimeout"`
 	}
 }
 
-
 var (
-	cfg_file   string
+	cfg_file string
 	//G_cfg_yaml map[string]interface{}
 	G_cfg_yaml Config
 )
-
 
 func init() {
 
 	fmt.Println(" init setting ... ")
 
-	cfg_file = "C:\\GOLib\\src\\go-web-scaffold\\conf\\dev.yaml"
+	cfg_file = "C:\\GOLib\\src\\go-web-scaffold\\conf\\prod.yaml"
 
 	if !file.Exists(cfg_file) {
 		log.Fatal(cfg_file + " is not exists")
@@ -63,9 +65,6 @@ func init() {
 	// ffmt.Println("%v",G_cfg_yaml)
 }
 
-
-
-
-func main(){
+func main() {
 
 }

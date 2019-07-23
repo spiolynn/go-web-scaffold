@@ -50,7 +50,7 @@
 - [x] 日志日期分割、日志级别分割
 - [x] 数据库CRUD (mysql)
 - [X] TDD: 单元测试
-
+- [X] 性能测试
 
 ## 5 Stargazers
 

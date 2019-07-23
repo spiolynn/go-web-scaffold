@@ -123,6 +123,12 @@
 			"revisionTime": "2019-04-03T09:10:19Z"
 		},
 		{
+			"checksumSHA1": "WSZhvC40KN+nuGVYE8iG/xwM9f4=",
+			"path": "github.com/t-tomalak/logrus-easy-formatter",
+			"revision": "a799195806ed3dabaacb45fc2ad616b68ab0724a",
+			"revisionTime": "2019-07-02T15:35:35Z"
+		},
+		{
 			"checksumSHA1": "aH0WYEpdWFdSPe3bJeoVvD5Tql0=",
 			"path": "github.com/ugorji/go/codec",
 			"revision": "e444a5086c436778cf9281a7059a3d58b9e17935",

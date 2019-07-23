@@ -5,6 +5,7 @@ package setting
 */
 
 import (
+	"flag"
 	"fmt"
 	"go-web-scaffold/pkgs/file"
 	"gopkg.in/yaml.v2"
@@ -42,16 +43,16 @@ type Config struct {
 }
 
 var (
-	cfg_file string
 	//G_cfg_yaml map[string]interface{}
 	G_cfg_yaml Config
 )
 
-func init() {
+func setup(yamlfile string) {
 
 	fmt.Println(" init setting ... ")
 
-	cfg_file = "C:\\GOLib\\src\\go-web-scaffold\\conf\\prod.yaml"
+	//cfg_file = "C:\\GOLib\\src\\go-web-scaffold\\conf\\prod.yaml"
+	cfg_file := yamlfile
 
 	if !file.Exists(cfg_file) {
 		log.Fatal(cfg_file + " is not exists")
@@ -63,6 +64,11 @@ func init() {
 		log.Fatalf(err.Error())
 	}
 	// ffmt.Println("%v",G_cfg_yaml)
+}
+
+func init() {
+	inifile := flag.String("i", "C:\\GOLib\\src\\go-web-scaffold\\conf\\prod.yaml", "yaml file")
+	setup(*inifile)
 }
 
 func main() {

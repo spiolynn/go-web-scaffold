@@ -1,0 +1,121 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "BhMowD2DIKSd9qq8Pzh7Y3mh2/w=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "5545eab6dad3bbbd6c5ae9186383c2a9d23c0dae",
+			"revisionTime": "2019-03-01T06:25:29Z"
+		},
+		{
+			"checksumSHA1": "sRjcMZbEcRPspBMKNK9flFMxCdU=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "057f63b1bb1cca059173363d10c3de9512ee1110",
+			"revisionTime": "2019-03-05T01:41:37Z"
+		},
+		{
+			"checksumSHA1": "majJ8I5CoXILF9lA0/SXjde7o8c=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "057f63b1bb1cca059173363d10c3de9512ee1110",
+			"revisionTime": "2019-03-05T01:41:37Z"
+		},
+		{
+			"checksumSHA1": "GAHho8qMLbDfGoD4w7SX7ZRT56U=",
+			"path": "github.com/gin-gonic/gin/internal/json",
+			"revision": "057f63b1bb1cca059173363d10c3de9512ee1110",
+			"revisionTime": "2019-03-05T01:41:37Z"
+		},
+		{
+			"checksumSHA1": "kIr0QRAOL7dIG3WbUral3aTktYs=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "057f63b1bb1cca059173363d10c3de9512ee1110",
+			"revisionTime": "2019-03-05T01:41:37Z"
+		},
+		{
+			"checksumSHA1": "Wp97rIwFg54dNwuCeR9Vslaehtw=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "b5d812f8a3706043e23a9cd5babf2e5423744d30",
+			"revisionTime": "2019-02-28T15:19:29Z"
+		},
+		{
+			"checksumSHA1": "GYofKRrc3lufaPFe3NmXvVAKHwk=",
+			"path": "github.com/keepeye/logrus-filename",
+			"revision": "ce01a4391dd122daec17910932a7ac1d253e2f96",
+			"revisionTime": "2019-07-11T07:50:16Z"
+		},
+		{
+			"checksumSHA1": "Aulh7C5SVOA4Jzt5eHNH6197Mbk=",
+			"path": "github.com/konsorten/go-windows-terminal-sequences",
+			"revision": "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e",
+			"revisionTime": "2019-02-26T22:47:05Z"
+		},
+		{
+			"checksumSHA1": "LfMM/YFNlcgT6KgtMED9foUluWY=",
+			"path": "github.com/lestrrat-go/file-rotatelogs",
+			"revision": "e0a88b0fe8408240e1560882fc17cb0bf66765cd",
+			"revisionTime": "2019-07-18T00:03:51Z"
+		},
+		{
+			"checksumSHA1": "DH2N/Hqw0uxTh5jHlT7KKaAoKtA=",
+			"path": "github.com/lestrrat-go/file-rotatelogs/internal/option",
+			"revision": "e0a88b0fe8408240e1560882fc17cb0bf66765cd",
+			"revisionTime": "2019-07-18T00:03:51Z"
+		},
+		{
+			"checksumSHA1": "OkHorrv7ef+Bp4hfBTIOQoZb+OU=",
+			"path": "github.com/lestrrat-go/strftime",
+			"revision": "8b31f9c59b0feb56c456ce49a7b3d2b2e93a6f18",
+			"revisionTime": "2018-08-21T11:37:35Z"
+		},
+		{
+			"checksumSHA1": "QNUPZGygt3B8XksoTKco/eIHFQI=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "369ecd8cea9851e459abb67eb171853e3986591e",
+			"revisionTime": "2019-02-25T17:38:24Z"
+		},
+		{
+			"checksumSHA1": "CUU7ZZtxuc1mpbM8XKrSTNiy/yM=",
+			"path": "github.com/pkg/errors",
+			"revision": "27936f6d90f9c8e1145f11ed52ffffbfdb9e0af7",
+			"revisionTime": "2019-02-27T00:00:51Z"
+		},
+		{
+			"checksumSHA1": "wW08eQ4ew2gE1y0guHdB5oisQXs=",
+			"path": "github.com/rifflock/lfshook",
+			"revision": "b9218ef580f59a2e72dad1aa33d660150445d05a",
+			"revisionTime": "2018-09-20T16:41:30Z"
+		},
+		{
+			"checksumSHA1": "mB5o9lbse489BCvZGbRkarc2Xp0=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "9b3cdde74fbe9443d704467498a7dcb61a79de9b",
+			"revisionTime": "2019-04-03T09:10:19Z"
+		},
+		{
+			"checksumSHA1": "aH0WYEpdWFdSPe3bJeoVvD5Tql0=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "e444a5086c436778cf9281a7059a3d58b9e17935",
+			"revisionTime": "2019-02-04T20:13:41Z"
+		},
+		{
+			"checksumSHA1": "8PTiiNCeWTOoH2Hpy2NJr+Wb7Fk=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "e8e3143a4f4a00f1fafef0dd82ba78223281b01b",
+			"revisionTime": "2019-04-19T09:16:35Z"
+		},
+		{
+			"checksumSHA1": "q190bL03wQok3wVwYmMub2XhOiU=",
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": "5f1438d3fca68893a817e4a66806cea46a9e4ebf",
+			"revisionTime": "2017-07-30T05:02:35Z"
+		},
+		{
+			"checksumSHA1": "oNqPrS2edE8peI3ah2INe379k8E=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "51d6538a90f86fe93ac480b35f37b2be17fef232",
+			"revisionTime": "2018-11-15T11:05:04Z"
+		}
+	],
+	"rootPath": "go-web-scaffold"
+}

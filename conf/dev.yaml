@@ -1,0 +1,29 @@
+# yaml
+# dev environment config
+db:
+  type: mysql
+  user: wams
+  password: wams
+  host: 120.27.1.111:3306
+  sid: wams
+  tableprefix: blog_
+#  maxidleconn: 10
+#  maxopenconn: 100
+
+server:
+  runmode: debug
+  httpprot: 8080
+  readtimeout: 60
+  wirtetimeout: 60
+
+app:
+  temp: empty
+#
+#jwt:
+#  jwtsecret: $sfsadf$sdf8s
+#  jwteffectivetime: 60
+#
+logs:
+  logsrootpath: C:\\GOLib\\src\\go-web-scaffold\\logs
+  logslevel: debug
+  logsfilename: info.log

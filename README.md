@@ -8,7 +8,36 @@
 
 ## 2 Directory Structure
 
+```
+.
+├── conf
+│   └── dev.yaml
+├── dev
+│   └── db.md
+├── logs
+│   └── info.log.201907230000
+├── main.go
+├── models
+│   ├── demo.go
+│   ├── demo_test.go
+│   └── model.go
+├── pkgs
+│   ├── file
+│   │   └── file.go
+│   ├── logging
+│   │   └── logging.go
+│   └── setting
+│       └── setting.go
+├── README.md
+├── routers
+│   ├── api
+│   │   └── v1
+│   │       └── control.go
+│   └── route.go
+└── vendor
+    └── vendor.json
 
+```
 
 ## 3 How to Use
 

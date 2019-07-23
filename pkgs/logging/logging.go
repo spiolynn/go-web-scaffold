@@ -10,7 +10,6 @@ import (
 	"github.com/lestrrat-go/file-rotatelogs"
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"
-	"github.com/t-tomalak/logrus-easy-formatter"
 	"go-web-scaffold/pkgs/setting"
 	"os"
 	"path/filepath"
@@ -144,17 +143,17 @@ func Panic(args ...interface{}) {
 
 // 定义日志输出格式
 
-func logfomat() {
-
-	Log = &logrus.Logger{
-		Out:   os.Stderr,
-		Level: logrus.DebugLevel,
-		Formatter: &easy.Formatter{
-			TimestampFormat: "2006-01-02 15:04:05",
-			LogFormat:       "[%lvl%]: %time% - %msg% \n",
-		},
-	}
-}
+//func logfomat() {
+//
+//	Log = &logrus.Logger{
+//		Out:   os.Stderr,
+//		Level: logrus.DebugLevel,
+//		Formatter: &easy.Formatter{
+//			TimestampFormat: "2006-01-02 15:04:05",
+//			LogFormat:       "[%lvl%]: %time% - %msg% \n",
+//		},
+//	}
+//}
 
 //func main() {
 //

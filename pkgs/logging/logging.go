@@ -105,6 +105,7 @@ func newLogger(v_path string) *logrus.Entry {
 	// 文件hook
 	customFormatter := new(logrus.TextFormatter)
 	customFormatter.TimestampFormat = "2006-01-02 15:04:05"
+	customFormatter.DisableColors = true
 	Log.Hooks.Add(lfshook.NewHook(pathMap, customFormatter))
 
 	Logs := Log.WithFields(logrus.Fields{"host": hostname})

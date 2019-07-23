@@ -106,6 +106,7 @@ func newLogger(v_path string) *logrus.Entry {
 	Log.Hooks.Add(lfshook.NewHook(pathMap, &logrus.TextFormatter{}))
 
 	Logs := Log.WithFields(logrus.Fields{"host": hostname})
+	Logs.Time = time.Now()
 
 	return Logs
 }

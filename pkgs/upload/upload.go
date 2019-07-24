@@ -33,9 +33,9 @@ var (
 )
 
 // article file
-func GetFileFullUrl(name string) string {
-	return filepreurl + GetImageUrl() + name
-}
+//func GetFileFullUrl(name string) string {
+//	return filepreurl + GetImageUrl() + name
+//}
 
 // 对文件名进行混淆
 func GetMixFileName(name string) string {

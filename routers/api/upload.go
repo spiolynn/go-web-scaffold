@@ -24,7 +24,7 @@ func UploadImage(c *gin.Context) {
 	// check1: 必须为图片
 	file, image, err := c.Request.FormFile("image")
 	if err != nil {
-		logging.Logs.Warn("Request from file err: %v", err)
+		logging.Logs.Warn("Request from file err: ", err)
 		code = e.ERROR_UPLOAD_CHECK_IMAGE_FAIL
 		appG.Response(http.StatusOK, code, data)
 		return
@@ -55,7 +55,7 @@ func UploadImage(c *gin.Context) {
 				code = e.ERROR_UPLOAD_SAVE_IMAGE_FAIL
 			} else {
 				data["image_url"] = upload.GetImageFullUrl(imageName)
-				data["image_save_url"] = savePath + imageName
+				data["image_save_url"] = filepath.Join(savePath, imageName)
 			}
 		}
 	}

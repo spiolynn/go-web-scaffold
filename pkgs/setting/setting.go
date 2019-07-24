@@ -47,6 +47,12 @@ type Config struct {
 		Readtimeout  int    `yaml: "readtimeout"`
 		Wirtetimeout int    `yaml: "wirtetimeout"`
 	}
+	Security struct {
+		Jwt struct {
+			Jwtsecret        string `yaml: "jwtsecret"`
+			Jwteffectivetime int64  `yaml: "jwteffectivetime"`
+		}
+	}
 }
 
 var (

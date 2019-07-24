@@ -3,9 +3,12 @@ package routers
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"go-web-scaffold/middlewares/jwt"
 	"go-web-scaffold/pkgs/setting"
+	"go-web-scaffold/pkgs/upload"
 	"go-web-scaffold/routers/api"
 	"go-web-scaffold/routers/api/v1"
+	"net/http"
 	"time"
 )
 
@@ -35,13 +38,16 @@ func InitRouter() *gin.Engine {
 	r.Use(gin.Recovery())
 
 	gin.SetMode(setting.G_cfg_yaml.Server.Runmode)
-	apiv1 := r.Group("/api/v1")
 
+	r.GET("/api/v1/users/login", api.CheckAdmin)
+	apiv1 := r.Group("/api/v1")
+	apiv1.Use(jwt.JWT())
 	{
 		apiv1.GET("/query", v1.Query)
 
 		// 通用api
-		apiv1.POST("/image/upload", api.UploadImage)
+		apiv1.POST("/images", api.UploadImage)
+		apiv1.StaticFS("/images", http.Dir(upload.GetImageFullPath()))
 	}
 
 	return r

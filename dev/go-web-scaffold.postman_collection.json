@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "dbc685a8-af74-49b0-be8f-5bdcd6a7fb8e",
+		"name": "go-web-scaffold",
+		"description": "go-web-scaffold\n\ngo web api 测试 demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "upload",
+			"item": [
+				{
+					"name": "/api/v1/images",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4621bbb-12c4-417b-8dfc-1c1fc77400ed",
+								"exec": [
+									"// 报文返回status断言\r",
+									"// 可以检测服务使用启动\r",
+									"// example using pm.response.to.have\r",
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"// 执行时间\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{CURRENT_TOKEN}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/hupan/Pictures/Saved Pictures/屏保.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/images",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images"
+							]
+						},
+						"description": "## 图片上传\n\n### 参数\n\n- image: image_filepath"
+					},
+					"response": [
+						{
+							"name": "正案例",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CURRENT_TOKEN}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/hupan/Pictures/Saved Pictures/屏保.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{HOST}}/api/v1/image/upload",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"image",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2019 04:47:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"image_save_url\": \"upload/imagesdeefe024f0ed08843b9dcb067d8195bb.jpg\",\n        \"image_url\": \"http://127.0.0.1:8089/upload/image/deefe024f0ed08843b9dcb067d8195bb.jpg\"\n    }\n}"
+						},
+						{
+							"name": "反案例",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CURRENT_TOKEN}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/hupan/Desktop/range.txt"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{HOST}}/api/v1/image/upload",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"image",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2019 05:01:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"图片文件类型不符合规范\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "download",
+			"item": [
+				{
+					"name": "/api/v1/images",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3de6dc72-cb36-4a90-8647-ddcbc61fc361",
+								"exec": [
+									"// 报文返回status断言\r",
+									"// 可以检测服务使用启动\r",
+									"// example using pm.response.to.have\r",
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"// 执行时间\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{CURRENT_TOKEN}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/images/deefe024f0ed08843b9dcb067d8195bb.jpg",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"deefe024f0ed08843b9dcb067d8195bb.jpg"
+							]
+						},
+						"description": "## 图片下载\n\n- 无参数"
+					},
+					"response": [
+						{
+							"name": "反案例",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CURRENT_TOKEN}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{Host}}/api/v1/upload/images/ee0dc655da02e88747edcd64313856a.png",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"upload",
+										"images",
+										"ee0dc655da02e88747edcd64313856a.png"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jun 2019 06:23:59 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "正案例",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{CURRENT_TOKEN}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{Host}}/api/v1/upload/images/ee0dc655da02e88747edcd64313856a3.png",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"upload",
+										"images",
+										"ee0dc655da02e88747edcd64313856a3.png"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "/api/v1/users/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "07096382-5492-424d-9c88-30c06ae72ad6",
+								"exec": [
+									"// 获取response json data\r",
+									"// 获取token 设置环境变量\r",
+									"// 使用view debug 来进行代码调试\r",
+									"pm.test(\"set token\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    console.log(\"show jsonData\");\r",
+									"    console.log(jsonData);\r",
+									"    console.log(jsonData.data.token);\r",
+									"    console.log(pm.response.text())\r",
+									"    pm.environment.unset(\"CURRENT_TOKEN\");\r",
+									"    pm.environment.set(\"CURRENT_TOKEN\", jsonData.data.token);\r",
+									"    \r",
+									"    var array = [1, 2, 3, 4];\r",
+									"    pm.environment.set(\"array\", JSON.stringify(array, null, 2));\r",
+									"    console.log(array[0]);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"// 报文返回status断言\r",
+									"// 可以检测服务使用启动\r",
+									"// example using pm.response.to.have\r",
+									"pm.test(\"response is ok\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// 断言环境变量是否一样\r",
+									"pm.test(\"environment to be production\", function () { \r",
+									"    pm.expect(pm.environment.get(\"HOST\")).to.equal(\"http://localhost:8089\"); \r",
+									"});\r",
+									"\r",
+									"// body中不含有error\r",
+									"pm.test(\"response should be okay to process\", function () { \r",
+									"    pm.response.to.not.have.jsonBody(\"token\"); \r",
+									"    // 是否包含mgs tag\r",
+									"    // pm.response.to.not.have.jsonBody(\"msg\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     // assert that the status code is 200\r",
+									"     pm.response.to.be.ok; // info, success, redirection, clientError,  serverError, are other variants\r",
+									"     // assert that the response has a valid JSON body\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed\r",
+									"});\r",
+									"\r",
+									"// response 是否包含字符\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"token\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"asdfa\",function(){\r",
+									"    var data = JSON.parse(responseBody);\r",
+									"    console.log(data)\r",
+									"})\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5f2f60f1-f55a-4625-a02b-04ed261e0a33",
+								"exec": [
+									"console.log(\"I AM OK\")",
+									"",
+									"// 设置环境变量",
+									"pm.environment.set(\"time\", new Date());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "timestampHeader",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/api/v1/users/login?username=tony&password=pizza1",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "tony"
+								},
+								{
+									"key": "password",
+									"value": "pizza1"
+								}
+							]
+						},
+						"description": "## 用户登录\n\n- `username`: 登录用户\n- `passward`：登录密码"
+					},
+					"response": [
+						{
+							"name": "反案例",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "timestampHeader",
+										"type": "text",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{HOST}}/api/v1/users/login?username=tony&password=stark",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "tony"
+										},
+										{
+											"key": "password",
+											"value": "stark"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2019 06:53:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"用户名不存在\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "反案例2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "timestampHeader",
+										"type": "text",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{HOST}}/api/v1/users/login?username=&password=",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": ""
+										},
+										{
+											"key": "password",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Jul 2019 07:14:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"请求参数错误\",\n    \"data\": {\n        \"msg\": \"[|Username.Required Can not be empty| |Password.Required Can not be empty|]\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "jwt test\n"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f4402cba-0fde-46e1-b676-a8106d2cce5f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4252d621-8264-4a63-b077-37b56238a5da",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

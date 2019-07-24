@@ -5,20 +5,33 @@ db:
   user: go
   password: go
   host: 1.1.1.1:3306
-  sid: goDB
-  tableprefix: blog_
+  sid: go
+  tableprefix: go_
   maxidleconn: 10
   maxopenconn: 100
   dbdebug: true
 
 server:
   runmode: debug
-  httpprot: 8080
+  httpprot: 8089
   readtimeout: 60
   wirtetimeout: 60
 
 app:
-  temp: empty
+  runtimebasepath: C:\\GOLib\\src\\go-web-scaffold\\runtime
+  imagesavepath: upload/images
+  imagemaxsize: 5
+  imageallowexts:
+    - .jpg
+    - .jpeg
+    - .png
+  imageallowextstype:
+    - image/png
+    - image/jpg
+    - image/jpeg
+  imageurl: /upload/image/
+  filepreurl: http://127.0.0.1:8089
+
 #
 #jwt:
 #  jwtsecret: $sfsadf$sdf8s

@@ -6,3 +6,4 @@ logs/*
 *.exe
 vendor/
 conf/prod.yaml
+pkgs/Logss

@@ -33,7 +33,7 @@ func _init() {
 		setting.G_cfg_yaml.DB.Sid))
 
 	if err != nil {
-		logging.Fatal(fmt.Sprintf("Fail to open the DB: %v, with errors: %v", setting.G_cfg_yaml.DB.Host, err))
+		logging.Logs.Fatal(fmt.Sprintf("Fail to open the DB: %v, with errors: %v", setting.G_cfg_yaml.DB.Host, err))
 	} else {
 		logging.Logs.Info("Connect to DB successful.")
 	}

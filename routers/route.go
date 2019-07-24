@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"go-web-scaffold/middlewares/jwt"
+	"go-web-scaffold/middlewares/metric"
 	"go-web-scaffold/pkgs/setting"
 	"go-web-scaffold/pkgs/upload"
 	"go-web-scaffold/routers/api"
@@ -38,6 +39,9 @@ func InitRouter() *gin.Engine {
 	r.Use(gin.Recovery())
 
 	gin.SetMode(setting.G_cfg_yaml.Server.Runmode)
+
+	// add 报文耗时中间件
+	r.Use(metric.Timing)
 
 	r.GET("/api/v1/users/login", api.CheckAdmin)
 	apiv1 := r.Group("/api/v1")

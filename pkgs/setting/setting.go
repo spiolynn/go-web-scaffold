@@ -37,9 +37,10 @@ type Config struct {
 		Imageurl   string `yaml: "imageurl"`
 	}
 	Logs struct {
-		Logsrootpath string `yaml: "logsrootpath"`
-		Logslevel    string `yaml: "logslevel"`
-		Logsfilename string `yaml: "logsfilename"`
+		Logsrootpath       string `yaml: "logsrootpath"`
+		Logslevel          string `yaml: "logslevel"`
+		Logsfilename       string `yaml: "logsfilename"`
+		Metriclogsfilename string `yaml: "metriclogsfilename"`
 	}
 	Server struct {
 		Runmode      string `yaml: "runmode"`

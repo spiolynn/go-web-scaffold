@@ -27,7 +27,14 @@ type Config struct {
 		DBdebug     string `yaml: "dbdebug"`
 	}
 	App struct {
-		Temp string `yaml: "temp"`
+		Runtimebasepath    string   `yaml: "runtimebasepath"`
+		Imagesavepath      string   `yaml: "imagesavepath"`
+		Imagemaxsize       int      `yaml: "imagemaxsize"`
+		Imageallowexts     []string `yaml: "imageallowexts"`
+		Imageallowextstype []string `yaml: "imageallowextstype"`
+
+		Filepreurl string `yaml: "filepreurl"`
+		Imageurl   string `yaml: "imageurl"`
 	}
 	Logs struct {
 		Logsrootpath string `yaml: "logsrootpath"`

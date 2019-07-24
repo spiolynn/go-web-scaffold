@@ -71,9 +71,9 @@ go build main.go
 - [x] 数据库CRUD (mysql)
 - [X] TDD: 单元测试
 - [X] 性能测试
+- [X] API测试
 - [ ] GET POST PUT DELETE 请求
 - [ ] JSON FORM PARAM 三种请求方式
-- [ ] POSTMAN 接口测试
 - [ ] 中间件[交易时间统计]
 - [ ] Redis 数据
 - [ ] 容器化部署
@@ -86,3 +86,9 @@ go build main.go
 
 
 [![Stargazers over time](https://starchart.cc/spiolynn/go-web-scaffold.svg)](https://starchart.cc/spiolynn/go-web-scaffold)
+
+
+## 6 demo api
+
+> https://documenter.getpostman.com/view/6107364/SVSRFR9z?version=latest
+

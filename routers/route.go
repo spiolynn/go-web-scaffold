@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"go-web-scaffold/pkgs/setting"
+	"go-web-scaffold/routers/api"
 	"go-web-scaffold/routers/api/v1"
 	"time"
 )
@@ -33,15 +34,15 @@ func InitRouter() *gin.Engine {
 	}))
 	r.Use(gin.Recovery())
 
-
 	gin.SetMode(setting.G_cfg_yaml.Server.Runmode)
 	apiv1 := r.Group("/api/v1")
 
 	{
 		apiv1.GET("/query", v1.Query)
-	}
 
+		// 通用api
+		apiv1.POST("/image/upload", api.UploadImage)
+	}
 
 	return r
 }
-

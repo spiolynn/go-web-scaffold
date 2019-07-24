@@ -30,32 +30,55 @@ go build main.go
 
 ```
 .
+├── build.sh
 ├── conf
-│   └── dev.yaml
+│   ├── dev.yaml
 ├── dev
-│   └── db.md
+│   ├── db.md
+│   ├── go-web-scaffold.postman_collection.json
+│   └── Restful.md
 ├── logs
+│   ├── info.log -> logs/info.log.201907230000
 │   └── info.log.201907230000
 ├── main.go
+├── middlewares
+│   └── jwt
+│       └── jwt.go
 ├── models
 │   ├── demo.go
 │   ├── demo_test.go
 │   └── model.go
 ├── pkgs
+│   ├── app
+│   │   └── response.go
+│   ├── e
+│   │   ├── code.go
+│   │   └── msg.go
 │   ├── file
 │   │   └── file.go
 │   ├── logging
 │   │   └── logging.go
-│   └── setting
-│       └── setting.go
+│   ├── security
+│   │   └── jwt.go
+│   │   └── jwt_test.go
+│   ├── setting
+│   │   └── setting.go
+│   ├── upload
+│   │   ├── upload.go
+│   │   └── upload_test.go
+│   └── util
+│       └── md5.go
 ├── README.md
 ├── routers
 │   ├── api
+│   │   ├── auth.go
+│   │   ├── upload.go
 │   │   └── v1
 │   │       └── control.go
 │   └── route.go
 └── vendor
     └── vendor.json
+
 
 ```
 
@@ -71,7 +94,8 @@ go build main.go
 - [x] 数据库CRUD (mysql)
 - [X] TDD: 单元测试
 - [X] 性能测试
-- [X] API测试
+- [X] API测试 PostMan-connection-json
+- [X] JWT 认证
 - [ ] GET POST PUT DELETE 请求
 - [ ] JSON FORM PARAM 三种请求方式
 - [ ] 中间件[交易时间统计]

@@ -84,4 +84,5 @@ go build main.go
 
 ## 5 Stargazers
 
-[![Stargazers over time](https://starcharts.herokuapp.com/spiolynn/go-web-scaffold.svg)](https://starcharts.herokuapp.com/spiolynn/go-web-scaffold)
+
+[![Stargazers over time](https://starchart.cc/spiolynn/go-web-scaffold.svg)](https://starchart.cc/spiolynn/go-web-scaffold)

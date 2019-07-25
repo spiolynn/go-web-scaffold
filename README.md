@@ -25,6 +25,63 @@ go build main.go
 ## 1 Features
 
 
+### 1 依赖
+
+```
+github.com/Pallinder/go-randomdata
+github.com/astaxie/beego/validation
+github.com/dgrijalva/jwt-go
+github.com/gin-contrib/sse
+github.com/gin-gonic/gin
+github.com/gin-gonic/gin/binding
+github.com/gin-gonic/gin/internal/json
+github.com/gin-gonic/gin/render
+github.com/go-ini/ini
+github.com/go-sql-driver/mysql
+github.com/goinggo/mapstructure
+github.com/golang/protobuf/proto
+github.com/jinzhu/gorm
+github.com/jinzhu/gorm/dialects/mysql
+github.com/jinzhu/inflection
+github.com/keepeye/logrus-filename
+github.com/konsorten/go-windows-terminal-sequences
+github.com/lestrrat-go/file-rotatelogs
+github.com/lestrrat-go/file-rotatelogs/internal/option
+github.com/lestrrat-go/strftime
+github.com/mattn/go-isatty
+github.com/pkg/errors
+github.com/rifflock/lfshook
+github.com/sirupsen/logrus
+github.com/t-tomalak/logrus-easy-formatter
+github.com/ugorji/go/codec
+go-web-frame/pkgs/setting
+go.uber.org/atomic
+go.uber.org/multierr
+go.uber.org/zap
+go.uber.org/zap/buffer
+go.uber.org/zap/internal/bufferpool
+go.uber.org/zap/internal/color
+go.uber.org/zap/internal/exit
+go.uber.org/zap/zapcore
+golang.org/x/sys/unix
+gopkg.in/ffmt.v1
+gopkg.in/go-playground/validator.v8
+gopkg.in/yaml.v2
+```
+
+### 2 主要目录
+
+- conf: 程序配置(yaml格式)
+- dev : 开发者文档
+- logs: 日志
+- middlewares: 自定义中间件
+- models: 模型层
+- pkgs:  公共功能
+- routes: 路由层
+- runtime: 服务在线生成
+- service: 服务实现层
+
+
 
 ## 2 Directory Structure
 

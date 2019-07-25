@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"go-web-scaffold/pkgs/logging"
-	"io/ioutil"
 	"strconv"
 	"time"
 )
@@ -20,11 +19,12 @@ func Timing(c *gin.Context) {
 	logging.Logm.Info("request start [" + RequestURL + "]")
 	logging.Logm.Info(fmt.Sprintf("request head:  %+v", c.Request.Header))
 
-	body, _ := ioutil.ReadAll(c.Request.Body)
-
-	if len(body) < 100 {
-		logging.Logm.Info(fmt.Sprintf("request body:   %s", string(body)))
-	}
+	// gin 只允许 get 一次body
+	//body, _ := ioutil.ReadAll(c.Request.Body)
+	//
+	//if len(body) < 100 {
+	//	logging.Logm.Info(fmt.Sprintf("request body:   %s", string(body)))
+	//}
 
 	c.Next()
 	elapsed := time.Since(t1)

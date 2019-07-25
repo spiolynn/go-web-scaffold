@@ -29,17 +29,19 @@ func Query(c *gin.Context) {
 
 func QueryAdminList(c *gin.Context) {
 
+	logging.Logs.Infof("QueryAdminList in : %v", c.Request.RequestURI)
 	// 1 返回数据准备
 	appG := app.Gin{c}
 	var data = make(map[string]interface{})
 
 	// 2 json 数据绑定
-	var _DQueryAdminList DQueryAdminList
+	var _DQueryAdminList Admins
 	if err := c.ShouldBindJSON(&_DQueryAdminList); err != nil {
 		logging.Logs.Errorf(" Bind fail  %v ", err)
 		appG.Response(http.StatusBadRequest, e.INVALID_PARAMS, data)
 		return
 	}
+	logging.Logs.Infof("in: %v", _DQueryAdminList)
 
 	// 3 数据校验
 	valid := validation.Validation{}
@@ -59,6 +61,7 @@ func QueryAdminList(c *gin.Context) {
 		} else {
 			data["status"] = "02"
 			data["adminlist"] = jsonStr
+			logging.Logs.Infof("out: %v", data)
 			appG.Response(http.StatusOK, e.SUCCESS, data)
 		}
 	}

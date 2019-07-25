@@ -96,9 +96,9 @@ go build main.go
 - [X] 性能测试
 - [X] API测试 PostMan-connection-json
 - [X] JWT 认证
-- [ ] GET POST PUT DELETE 请求
-- [ ] JSON FORM PARAM 三种请求方式
-- [ ] 中间件[交易时间统计]
+- [X] GET POST PUT DELETE 请求
+- [X] JSON FORM PARAM 三种请求方式
+- [X] 中间件[交易时间统计]
 - [ ] Redis 数据
 - [ ] 容器化部署
 - [ ] 日志集中收集 ELK

@@ -104,7 +104,14 @@ go build main.go
 - [ ] 日志集中收集 ELK
 - [X] 安全机制 文件上传、下载安全限制
 - [ ] AUTH2
-- [ ] 服务注册 
+- [ ] 服务注册
+- [x] 数据结构映射
+    - [X] json -> struct
+    - [X] struct -> json
+    - [X] map -> struct
+    - [X] strcut -> map
+    - [X] map -> json
+    - [X] json -> map
 
 ## 5 Stargazers
 

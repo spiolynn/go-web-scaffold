@@ -48,6 +48,7 @@ func InitRouter() *gin.Engine {
 	apiv1.Use(jwt.JWT())
 	{
 		apiv1.GET("/query", v1.Query)
+		apiv1.GET("/admins", v1.QueryAdminList)
 
 		// 通用api
 		apiv1.POST("/images", api.UploadImage)

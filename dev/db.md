@@ -91,6 +91,10 @@ CREATE TABLE `users_accounts` (
 
 ```
 
+```$xslt
+ALTER TABLE `blog_admin` ADD COLUMN Expireday int DEFAULT 1;
+```
+
 
 ## 3 数据初始化
 

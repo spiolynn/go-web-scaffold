@@ -17,7 +17,6 @@ func beforeTest() {
 func TestGetAdminbyId(t *testing.T) {
 
 	beforeTest()
-
 	admin, err := GetAdminbyId(1)
 	if err == nil {
 		fmt.Printf("%+v", *admin)
@@ -32,7 +31,7 @@ func TestGetAdminbyNm(t *testing.T) {
 
 	admin, err := GetAdminbyNm("tony")
 	if err == nil {
-		fmt.Printf("%+v", admin)
+		fmt.Printf("%+v", (admin)[0])
 	} else {
 		fmt.Printf("%v", err)
 	}
@@ -57,11 +56,12 @@ func TestCheckAdmin(t *testing.T) {
 func TestAddAdmin(t *testing.T) {
 	beforeTest()
 
-	m2 := make(map[string]interface{})
+	m2 := make(map[string]string)
 	m2["username"] = randomdata.SillyName()
 	m2["password"] = randomdata.Digits(9)
+	admin := &Admin{0, m2["username"], m2["password"], 0}
 
-	err := AddAdmin(m2)
+	err := AddAdmin(admin)
 	if err == nil {
 		t.Logf("ok")
 	} else {
@@ -85,12 +85,46 @@ func TestEditAdmin(t *testing.T) {
 
 	m2 := make(map[string]interface{})
 	m2["username"] = "tony"
-	m2["password"] = "pizza1"
+	m2["password"] = "pizza"
 	err := EditAdmin(m2)
 	if err == nil {
 		t.Logf("ok")
 	} else {
 		t.Error(fmt.Sprintf("%+v", err))
+	}
+}
+
+//func TestQueryAdmin(t *testing.T) {
+//
+//	beforeTest()
+//
+//	m2 := make(map[string]interface{})
+//	m2["username"] = "tony"
+//	m2["password"] = ""
+//	m2["id"] = 1
+//	m2["expireday"] = 1
+//
+//	_adminlist,err := QueryAdmin(m2)
+//
+//	if err == nil {
+//		t.Logf("%v",_adminlist)
+//	}else{
+//		t.Errorf("%v",err)
+//	}
+//
+//}
+
+func TestQueryAdminbyStruct(t *testing.T) {
+	beforeTest()
+
+	_admin := Admin{0, "tony", "pizza", 0}
+	_adminlist, err := QueryAdminbyStruct(&_admin)
+
+	if err == nil {
+		t.Logf("%v", _adminlist)
+		t.Logf("%v", (*_adminlist)[0].ID)
+	} else {
+		t.Errorf("%v", err)
 	}
 }
 
@@ -102,10 +136,11 @@ func BenchmarkAddAdmin(b *testing.B) {
 	b.ResetTimer()
 
 	for i := 0; i != 1000; i++ {
-		m2 := make(map[string]interface{})
+		m2 := make(map[string]string)
 		m2["username"] = randomdata.SillyName()
 		m2["password"] = randomdata.Digits(9)
-		err := AddAdmin(m2)
+		admin := &Admin{0, m2["username"], m2["password"], 0}
+		err := AddAdmin(admin)
 		if err == nil {
 			b.Logf("ok")
 		} else {

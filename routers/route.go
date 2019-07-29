@@ -7,6 +7,7 @@ import (
 	"go-web-scaffold/middlewares/metric"
 	"go-web-scaffold/pkgs/setting"
 	"go-web-scaffold/pkgs/upload"
+	"go-web-scaffold/pkgs/util"
 	"go-web-scaffold/routers/api"
 	"go-web-scaffold/routers/api/v1"
 	"net/http"
@@ -42,6 +43,9 @@ func InitRouter() *gin.Engine {
 
 	// add 报文耗时中间件
 	r.Use(metric.Timing)
+
+	// add 性能信息
+	util.Wrap(r)
 
 	r.GET("/api/v1/users/login", api.CheckAdmin)
 	apiv1 := r.Group("/api/v1")

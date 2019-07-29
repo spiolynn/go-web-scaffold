@@ -7,6 +7,7 @@ import (
 	"go-web-scaffold/pkgs/setting"
 	"go-web-scaffold/routers"
 	"net/http"
+	_ "net/http/pprof"
 	"time"
 )
 

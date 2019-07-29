@@ -18,9 +18,7 @@ go build main.go
 
 - step4: run
 ./main
-
 ```
-
 
 ## 1 Features
 
@@ -162,6 +160,8 @@ gopkg.in/yaml.v2
 - [X] 安全机制 文件上传、下载安全限制
 - [ ] AUTH2
 - [ ] 服务注册
+- [ ] Cookies式灰度发布
+- [ ] goprof性能监控
 - [x] 数据结构映射
     - [X] json -> struct
     - [X] struct -> json
